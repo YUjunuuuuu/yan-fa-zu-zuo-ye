@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta char="UTF-8">
+		<title>二级导航</title>
+		<style>
+			#menu
+			{
+	      width: 100px;
+	      /*width 定义宽度*/
+	      border: 1px solid #999;
+	      /*border 属性规定图像周围的边框宽度，就是说可以增加或去掉图像边框*/
+	      /*solid 规定边框颜色颜色*/
+      }
+      #menu ul
+      {
+        margin: 0px;
+        /*margin 定义边距*/
+        padding: 0px;
+        /*padding 定义内边距*/
+        list-style: none;
+        /*list-style 把图像设置为列表中的列表项目标记*/
+      }
+      #menu ul li
+      {
+      	
+        background: #06C;
+        /*background 定义背景颜色*/
+        height: 26px;
+        /*height 定义边框高度*/
+        line-height: 26px;
+        /*line-height 设置以百分比计的行高*/
+        text-align: center;
+        /*text-align 文本对齐 center:居中*/
+        border-bottom: 1px solid #999;
+        /*border 属性规定图像周围的边框宽度，就是说可以增加或去掉图像边框*/
+	      /*solid 规定边框颜色颜色*/
+        position: relative;
+        /*position 属性把元素放置到一个静态的、相对的、绝对的、或固定的位置中*/
+        /*
+        static 默认。位置设置为 static 的元素，它始终会处于页面流给予的位置（static 元素会忽略任何 top、bottom、left 或 right 声明）
+        
+        relative 位置被设置为 relative 的元素，可将其移至相对于其正常位置的地方，因此 "left:20" 会将元素移至元素正常位置左边 20 个像素的位置
+        
+        absolute 位置设置为 absolute 的元素，可定位于相对于包含它的元素的指定坐标。此元素的位置可通过 "left"、"top"、"right" 以及 "bottom" 属性来规定
+        
+        fixed 位置被设置为 fixed 的元素，可定位于相对于浏览器窗口的指定坐标。此元素的位置可通过 "left"、"top"、"right" 以及"bottom" 属性来规定。不论窗口滚动与否，元素都会留在那个位置。工作于 IE7（strict 模式）
+        */
+      }
+      a
+      {
+        display: inline;
+        /*display 使段落生出行内框*/
+        /*
+        
+        none									此元素不会被显示。
+				block									此元素将显示为块级元素，此元素前后会带有换行符。
+				inline								默认。此元素会被显示为内联元素，元素前后没有换行符。
+				inline-block					行内块元素。（CSS2.1 新增的值）
+				list-item							此元素会作为列表显示。
+				run-in								此元素会根据上下文作为块级元素或内联元素显示。
+				compact								CSS 中有值 compact，不过由于缺乏广泛支持，已经从 CSS2.1 中删除。
+				marker								CSS 中有值 marker，不过由于缺乏广泛支持，已经从 CSS2.1 中删除。
+				table									此元素会作为块级表格来显示（类似 <table>），表格前后带有换行符。
+				inline-table					此元素会作为内联表格来显示（类似 <table>），表格前后没有换行符。
+				table-row-group				此元素会作为一个或多个行的分组来显示（类似 <tbody>）。
+				table-header-group		此元素会作为一个或多个行的分组来显示（类似 <thead>）。
+				table-footer-group		此元素会作为一个或多个行的分组来显示（类似 <tfoot>）。
+				table-row							此元素会作为一个表格行显示（类似 <tr>）。
+				table-column-group		此元素会作为一个或多个列的分组来显示（类似 <colgroup>）。
+				table-column					此元素会作为一个单元格列显示（类似 <col>）
+				table-cell						此元素会作为一个表格单元格显示（类似 <td> 和 <th>）
+				table-caption					此元素会作为一个表格标题显示（类似 <caption>）
+				inherit								规定应该从父元素继承 display 属性的值。
+
+        */
+        font-size: 13px;
+        /*font-size 定义字体大小*/
+        color: #FFF;
+        /*color 定义字体颜色*/
+        text-decoration: none;
+        /*text-decoration 文本修饰*/
+        /*
+        none					默认。定义标准的文本。
+				underline			定义文本下的一条线。
+				overline			定义文本上的一条线。
+				line-through	定义穿过文本下的一条线。
+				blink					定义闪烁的文本。
+				inherit				规定应该从父元素继承 text-decoration 属性的值。
+				        */
+      }
+      a:hover
+      /*hover(选择器) 选择鼠标指针浮动在其上的元素，并设置其样式*/
+      {
+        color:#F00;
+        font-size: 14px;
+      }
+      #menu ul li ul{
+        display: none;
+        top:0px;
+        /*top 把图像的上边缘设置在其包含元素上边缘之下 0 像素高的位置*/
+        width: 130px;
+        border: 1px solid #ccc;
+        border-bottom: none;
+        position: absolute;
+        left:100px;
+      }
+        #menu ul li:hover ul{
+            display: block;
+        }
+        #menu ul li:hover ul li a{
+            display: block;
+        }
+		</style>
+	</head>
+
+	<body>
+		<div id="menu">
+    <ul>
+        <li><a href="#">标题1</a>
+	        <ul>
+	            <li><a href="#">小标题1.1</a></li>
+	            <li><a href="#">小标题1.2</a></li>
+	            <li><a href="#">小标题1.3</a></li>
+	            <li><a href="#">小标题1.4</a></li>
+	            <li><a href="#">小标题1.5</a></li>
+	        </ul>
+    		</li>
+    		
+    <li><a href="#">标题2</a>
+        <ul>
+            <li><a href="#">小标题2.1</a></li>
+            <li><a href="#">小标题2.2</a></li>
+            <li><a href="#">小标题2.3</a></li>
+            <li><a href="#">小标题2.4</a></li>
+            <li><a href="#">小标题2.5</a></li>
+        </ul>
+    </li>
+        <li><a href="#">标题3</a>
+            <ul>
+                <li><a href="#">小标题3.1</a></li>
+                <li><a href="#">小标题3.2</a></li>
+            </ul>
+        </li>
+    <li><a href="#">标题4</a>
+        <ul>
+            <li><a href="#">小标题4.1</a></li>
+            <li><a href="#">小标题4.2</a></li>
+            <li><a href="#">小标题4.3</a></li>
+            <li><a href="#">小标题4.4</a></li>
+            <li><a href="#">小标题4.5</a></li>
+        </ul>
+    </li>
+    <li><a href="#">标题5</a>
+        <ul>
+            <li><a href="#">小标题5.1</a></li>
+            <li><a href="#">小标题5.2</a></li>
+            <li><a href="#">小标题5.3</a></li>
+            <li><a href="#">小标题5.4</a></li>
+        </ul>
+    </li>
+    <li><a href="#">标题6</a>
+        <ul>
+            <li><a href="#">小标题6.1</a></li>
+            <li><a href="#">小标题6.2</a></li>
+            <li><a href="#">小标题6.3</a></li>
+        </ul>
+    </li>
+    </ul>
+</div>
+	</body>
+	
+</html>

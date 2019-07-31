@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>表单</title>
+	<style type="text/css">
+		input{width:100px;height:25px;}
+		body{align-content: center}
+		fieldset{width:400px;height:180px}
+	</style>
+</head>
+
+<body>
+	<form name="表单"method="post"action="http://www.w3cshool.com"enctype="text/plain"target="_self">
+		<fieldset>
+			<legend align="center">登录</legend>
+		用户名<input type="text"><br>
+		密&nbsp;&nbsp; 码<input type="password"><br>
+		<input type="submit"value="取消">
+		<input type="submit"value="登陆"onclick="javascript:alert('登陆成功')">
+			<input type="button"value="注册新用户"onclick="javascript:alert('注册新用户')">
+			文件选择框<input name="文本"type="file"><br>
+			<input type="hidden"value="abcd">
+			<textarea name="info"rows="4"cols="50"wrap="virtual">
+			我是一个文本框</textarea>
+			<input list="browsers"name="browser">
+			<datalist id="browsers">
+			<option value="internet explorer">
+			<option value="firefox">
+			<option value="chrome">
+			<option value="opera">
+			<option value="safari">
+			</datalist>
+			<input type="submit">
+		
+		</fieldset>
+		<fieldset>
+		<legend align="left">其他信息</legend>
+		身高:<input type="text">
+		体重:<input type="text"></fieldset>
+	李斯爱吃的水果有<select name="水果">
+	<option>---请选择---</option>
+		<option>苹果</option>
+		<option>李子</option>
+		<option>火龙果</option></select><br>
+		李斯喜欢吃的水果<br>
+	苹果<input type="checkbox">
+		李子<input type="checkbox">
+		火龙果<input type="checkbox">
+		性别:<br>男<input type="radio"name="sex"value="male">
+		女<input type="radio"name="sex"value="female">
+		<h3>四月是你的谎言</h3>
+		<input type="image"name="image"src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539973949303&di=096364b2024d13675127304a2c6a1824&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F019b5f564acc6032f87512f6d391b4.jpg"width=600px height=400px>
+		<input type="submit"value="提交">
+		用户名:<input type="text"name="usr_name">
+		加密:<keygen name="security">
+		<input type="submit">
+	</form>
+	<form oninput="x.value=parseInt(a.value)">0
+	<input type="range"id="a"value="50">100
+		=<output name="x"for="a"></output><br>
+		<input type="date"name="bday"disabled>
+		
+		<input type="number"max="10"min="0">
+		Country code:<input type="text"name="country_code"pattern="[A-Za-z]{3}"title="Three letter country code">
+		<input type="submit"><br>
+		Email:<input type="text"name="email"><br>
+		Country:<input type="text"name="country"value="china"readonly><br>
+		<input type="submit" value="提交">
+		<input type="text"name="usrname" size="35"required>
+		<input type="submit">
+		<input type="number"name="points" step="3"max=9 min=0>
+		<input type="submit">
+		<input type="url"><br>
+		<input type="week"><br>
+		<input type="time">
+		<input type="email">
+		
+		
+	</form>
+</body>
+</html>

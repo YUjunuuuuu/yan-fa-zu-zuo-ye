@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>作业3</title>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min的副本.css" type="text/css" rel="stylesheet">
+    <style type="text/css">
+        #qt {
+            background-color: antiquewhite;
+            padding-top: 250px;
+            padding-left: 290px;
+            height: 800px
+        }
+    </style>
+</head>
+
+<body>
+    <div id="qt">
+        <div id="zt">
+            <form class="form-horizontal" id="yujun" onSubmit="getSubmit()">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="inputEmail3" placeholder="Username" onFocus="getFocus(this)" onBlur="loseFocus(this)" name="username" pattern="\d+" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password" onFocus="getFocus(this)" onBlur="loseFocus(this)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+          <input type="checkbox"> Remember me
+        </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-12">
+                        <button type="submit" class="btn btn-primary" id="one" onclick="submitData()">Sign in</button>
+                        <button type="reset" class="btn btn-primary" id="two">Reset</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function getFocus(obj) {
+            obj.style.backgroundColor = "red";
+            //obj.setAttribute("placeholder"," ");
+
+        }
+
+        function loseFocus(obj) {
+            obj.style.backgroundColor = "black";
+        }
+
+        function get(g) {
+            return document.getElementById(g);
+        }
+
+        function getSubmit() {
+            alert("请确认一下信息  \n  用户名为" + get("inputEmail3").value + "\n  密码为" + get("inputPassword3").value);
+        }
+
+        // var xhr = new XMLHttpRequest();
+        // xhr.onreadystatechange = function() {
+        //     if (xhr.readyState == 4) {
+        //         if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+        //             alert(xhr.responseText);
+        //         } else {
+        //             alert("Request was unsuccessful:" + xhr.status);
+        //         }
+        //     }
+        // };
+        // xhr.open("get", "ajax.php", true);
+        // xhr.setRequestHeader("MyHeader", "MyValue");
+        // xhr.send(null);
+        function submitData() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4) {
+                    if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+                        alert(xhr.responseText);
+                    } else {
+                        alert("Request was unsuccessful:" + xhr.status);
+                    }
+                }
+            }
+        };
+        xhr.open("post", "ajax.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        var form = document.getElementById("yujun");
+        xhr.send(serialize(form));
+
+        function serialize(form) {
+            var parts = [];
+            field = null,
+                i, len, j, optLen, option, optValue;
+            for (i = 0, len = form.elements.length; i < len; i++) {
+                field = form.elements[i];
+                switch (field.type) {
+                    case "select-one":
+                    case "select-multiple":
+                        if (field.name.length) {
+                            for (j = 0, optLen = field.options.length; j < optLen; j++) {
+                                option = field.options[j];
+                                if (option.selected) {
+                                    optValue = "";
+                                    if (option.hasAttribute) {
+                                        optValue = (option.hasAttribute("value") ? option.value : option.text);
+                                    } else {
+                                        optValue = (option.attributes["value"].specified ? option.value : option.text);
+
+                                    }
+                                    parts.push(encodeURIComponent(field.name) + "=" + encodeURIComponent(optValue));
+                                }
+                            }
+                        }
+                        break;
+                    case undefined:
+                    case "file":
+                    case "submit":
+                    case "reset":
+                    case "button":
+                        break;
+                    case "radio":
+                    case "checkbox":
+                        if (!field.checked) {
+                            break;
+                        }
+                    default:
+                        if (field.name.length) {
+                            parts.push(encodeURIComponent(field.name) + "=" + encodeURIComponent(field.value));
+                        }
+                }
+            }
+            return parts.join("&");
+        }
+    </script>
+</body>
+
+</html>

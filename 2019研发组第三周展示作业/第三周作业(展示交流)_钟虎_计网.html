@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表单事件实例</title>
+		<script type="text/javascript">
+			function p1(obj){
+				obj.select();
+				obj.style.color="#000";
+			}
+			function p2(obj){
+				if(obj.value==""){
+					obj.value=="请选择城市"
+					obj.style.color="#999";
+				}
+			}
+			function p3(obj){
+			document.getElementById('text1').value=obj.value
+			document.getElementById('text1').style.color="#000";
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="text1" onfous="p1(this)" value="选择城市"
+		style="color:#999" onblur="p2(this)">
+		<select type="select" name=s1 onchange="p3(this)">
+			<option selected value="北京">北京</option>
+			<option value="上海">上海</option>
+			<option value="福建">福建</option>
+		</select>
+	</body>
+</html>

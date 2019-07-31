@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>鼠标事件</title>
+	<link href="bootstrap.min的副本 2.css" type="text/css" rel="stylesheet">
+	<style type="text/css">
+		#div1{
+			width:200px;
+			height:200px;
+			background-color: aqua;
+			float:left;
+		}
+	</style>
+</head>
+
+<body>
+	<ul class="nav nav-pills">
+  <li role="presentation" class="active" onClick="addDiv()"><a href="#" >增加div</a></li>
+  <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      Dropdown <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="#">红色</a></li>
+	<li><a href="#">蓝色</a></li>
+    </ul>
+  </li>
+</ul>
+	<div id="div1" onMouseOver="changeColor()" onMouseOut="changeColorAfter()" onDblClick="xr()"></div>
+	<script type="text/javascript" src="jquery-1.11.3.min的副本.js"></script>
+	<script type="text/javascript" src="bootstrap.min的副本.js"></script>
+	<script type="text/javascript">
+	$('.dropdown-toggle').dropdown();
+	</script>
+	<script>
+function addDiv(){
+var div = document.createElement('div');
+div.style.background = "blue";
+	div.style.width='100px';
+	div.style.height='100px';
+	div.style.float='left';
+var bo = document.body;
+bo.insertBefore(div,bo.lastChild);
+}
+function changeColor(){
+	var h=document.getElementById('div1');
+	h.style.backgroundColor='blue';
+}
+function changeColorAfter(){
+var l=document.getElementById('div1');
+l.style.backgroundColor='red';
+}
+		function xr(){
+			var o=document.getElementById("div1");
+		
+			o.style.width=400+'px';
+			o.style.height=400+'px';
+		}
+	</script>
+ 
+</body>
+</html>

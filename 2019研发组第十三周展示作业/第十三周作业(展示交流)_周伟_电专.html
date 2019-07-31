@@ -1,0 +1,88 @@
+<!DOCTYPE <!DOCTYPE HTML>
+<html>
+
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript">
+			
+			function md()
+			{
+				var y,x;
+				x = new Date();
+				y = new Date();
+				//更改为2018年6月20号
+				y.setFullYear(2018,06,20);
+				x.getFullYear();
+				//获得年份为2018年
+				y.getFullYear(2018);
+				//获得月份为6月份
+				x.getMonth();
+				y.getMonth();
+				//获得号数为20号
+				y.getDate();
+				x.getDate();
+				//获得时，分，秒
+				x.getHours();
+				x.getMinutes();
+				x.getSeconds();
+				document.getElementById('xnm').innerHTML = (((x.getFullYear()) - (y.getFullYear())) * 365 + ((x.getMonth() + 1) + (y.getMonth())) * 30 + ((x.getDate()) + (y.getDate()))) - 365 + "天" + (x.getHours()) + "小时" + (x.getMinutes()) + "分钟" + (x.getSeconds()) + "秒";
+				
+				//document.getElementById('xnm').innerHTML = ((x.getMonth()) + (y.getMonth()));
+				
+				document.getElementById('yx').innerHTML = "肖尼玛为你报时" + "<br/>" + "现在时间是" + (x.getFullYear()) + "年" + (x.getMonth() + 1) + "月" + (x.getDate()) + "日" + (x.getHours()) + "点" + (x.getMinutes()) + "分" + (x.getSeconds()) + "秒";
+				
+				t = setTimeout('md()',100)
+				
+			}
+			
+			
+			//鼠标事件
+			function xx(xxx)
+			{
+				xxx.innerHTML = "距离2018年06月20日已经有"
+			}
+			function yy(yyy)
+			{
+				yyy.innerHTML = "0.0"
+			}
+		</script>
+		
+		
+		
+	</head>
+
+	<body onload="md()">
+		
+		<h1 align="center" style="color:green">
+			<div onmouseover="xx(this)" onmouseout="yy(this)">
+				<h3>
+						x.x
+				</h3>
+			</div>
+		</h1>
+		
+		<h1 style="color:red">
+			<marquee behavior="alternate">
+				<div id="xnm"></div>
+			</marquee>
+		</h1>
+		
+		<hr/>
+		
+		<strong>Javascript:Date对象</strong>
+		<strong align="center" style="float:right">Javascript:Date对象</strong><br/>
+		
+		
+		<hr/>
+		
+		<h3 align="center" style="color:blue">
+			<div id="yx"></div>
+		</h3>
+		
+		<div align="center">
+			<img src="http://picture.ik123.com/uploads/allimg/170103/3-1F103160456.jpg" width="65%" height="55%">
+		</div>
+	</body>
+
+</html>

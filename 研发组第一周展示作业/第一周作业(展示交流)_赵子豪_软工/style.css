@@ -1,0 +1,38 @@
+/*页面侧边距*/
+body{
+	padding: 75px 75px;
+	font-family: 宋体；
+	line-height:100px;	
+}
+/*斜体缩进*/
+.t1{
+	font-style: italic;           
+	text-indent: 2em;
+    }
+/*文字下划线*/
+.xia1{
+	text-decoration: underline;	
+}
+/*无序列表嵌套时会变成空心圆点，将其改成实心*/
+.l1{
+	type="disc";
+}
+/*表格边框及间距*/
+.table{                          
+	border="1";
+	cellspacing="0";
+}
+/*缩进*/
+.suo2{
+	text-indent: 2em;           
+}
+/*部分标题颜色*/
+h4{
+	color: red;
+}
+p li{
+	line-height:100px;
+	
+}
+
+

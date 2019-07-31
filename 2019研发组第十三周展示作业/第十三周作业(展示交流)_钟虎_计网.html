@@ -1,0 +1,89 @@
+﻿<!DOCTYPE HTML>
+<!DOCTYPE html PUBLIC "" ""><HTML><HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible">
+ 
+<META charset="utf-8"> <TITLE>无标题文档</TITLE> 
+<STYLE type="text/css">
+body{position:relative;}
+div{width:150px;height:100px;position:absolute;color:#fff;line-height:100px;text-align:center;display:block;}
+#div1{background-color:#09f;left:10px;top:20px;z-index:2; }
+#div2{background-color:#f00;left:200px;top:20px;z-index:2;}
+#div3{background-color:#0f0;left:10px;top:140px;z-index:2;}
+#div4{background-color:#ff0;left:200px;top:140px;z-index:2;}
+#div5{background-color:#ccc;left:380px;top:20px;width:500px;height:220px;color:#fff;line-height:220px;text-align:center;font-size:32px;}
+</STYLE>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD> 
+<BODY>
+<DIV id="div1">白色污染</DIV>
+<DIV id="div2">大气污染</DIV>
+<DIV id="div3">香蕉皮</DIV>
+<DIV id="div4">易拉罐</DIV>
+<DIV id="div5">回收站</DIV>
+<SCRIPT>
+var aDiv=document.getElementsByTagName("div");
+var orleft;
+var ortop;
+var ordis;
+for(var i=0;i<4;i++){
+	drag(aDiv[i]);
+}
+function drag(obj){
+		/*
+   	1.鼠标在诶拖拽元素上按下时，开始拖拽     onmousedown
+   	2.鼠标移动时被拖拽元素跟随鼠标移动       onmousemove
+   	3.当鼠标松开时，被拖拽元素固定在当前位置 onmouseup
+   	 */
+	//设置box1捕获所有鼠标按下的事件
+	obj.onmousedown=function(ev){
+		obj.style.zIndex=3;
+		ev=ev||event;//获取鼠标的坐标
+		that=this;
+		orleft=getStyle(this,"left");
+		ortop=getStyle(this,"top");
+		console.log(orleft);
+		console.log(ortop);
+       //div的偏移量鼠标.clientX - 元素.offsetLeft
+	   //div的偏移量鼠标.clientY - 元素.offseTop
+		var disX=ev.clientX-this.offsetLeft;
+		var disY=ev.clientY-this.offsetTop;
+		document.onmousemove=function(ev){
+			ev=ev||event;//兼容性
+			//获取鼠标的坐标
+			var newleft=ev.clientX-disX;
+			var newtop=ev.clientY-disY;
+			if(newleft<0){newleft=0;}
+			if(newtop<0){newtop=0;}
+			if((newleft+obj.offsetWidth)>document.documentElement.clientWidth){newleft=document.documentElement.clientWidth-obj.offsetWidth;}
+			if((newtop+obj.offsetHeight)>document.documentElement.clientHeight){newtop=document.documentElement.clientHeight-obj.offsetHeight;}
+			//修改box1的位置
+			obj.style.left=newleft+"px";
+			obj.style.top=newtop+"px";
+			ordis=getStyle(that,"diaplay");
+		}
+	}
+	//松开事件
+	document.onmouseup=function(){	
+		//取消docunment的onmouseup事件
+		document.onmousemove=null;	
+		if(that.offsetLeft>aDiv[4].offsetLeft&&
+			that.offsetLeft<aDiv[4].offsetLeft+aDiv[4].offsetWidth-obj.offsetWidth&&
+			that.offsetTop>aDiv[4].offsetTop&&
+			that.offsetTop<aDiv[4].offsetTop+aDiv[4].offsetHeight-obj.offsetHeight){
+				that.style.display="none";
+		}
+			
+		if(ordis="block"){
+			that.style.left=orleft;
+			that.style.top=ortop;
+		}
+	}
+	
+}
+
+
+function getStyle( obj, attr ){
+	return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle( obj )[attr];
+}
+</SCRIPT>
+ </BODY></HTML>

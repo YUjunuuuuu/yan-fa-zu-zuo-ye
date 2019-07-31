@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>滑动作业</title>
+    <style type="text/css">
+        .one {
+            height: 100px;
+            width: 100px;
+            background-color: yellowgreen;
+            border-radius: 100%;
+            float: left;
+            margin-top: 400px;
+            margin-left: 200px;
+        }
+        
+        .two {
+            height: 100px;
+            width: 100px;
+            background-color: yellowgreen;
+            border-radius: 100%;
+            float: left;
+            margin-top: 400px;
+            margin-left: 100px;
+        }
+        
+        .three {
+            height: 100px;
+            width: 100px;
+            background-color: wheat;
+            border-radius: 100%;
+            float: left;
+            margin-top: 400px;
+            margin-left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <script type="text/javascript">
+        var h = document.getElementsByClassName("one")[0];
+        h.onmouseover = function() {
+            h.style.backgroundColor = "blue";
+            h.innerHTML = "5";
+            h.style.lineHeight = "100px";
+            h.style.textAlign = "center";
+            var one1 = document.createElement("div");
+            one1.style.width = "140px";
+            one1.style.height = "140px";
+            one1.style.borderStyle = "solid";
+            one1.innerHTML = "第一个";
+            one1.style.lineHeight = "100px";
+            one1.style.textAlign = "center";
+            one1.style.left = "180px";
+            one1.style.position = "absolute";
+            one1.setAttribute("id", "one2");
+            var hu = 0;
+            document.body.appendChild(one1);
+
+            function hd() {
+                hu = hu + 10;
+                one1.style.top = hu + "px";
+                if (hu == 240)
+                    clearInterval(intervalId);
+            }
+            intervalId = setInterval(hd, 10);
+        }
+        h.onmouseout = function() {
+            h.style.backgroundColor = "yellowgreen";
+            h.innerHTML = "";
+
+            var child = document.getElementById("one2");
+
+            document.body.removeChild(child);
+        }
+        var j = document.getElementsByClassName("two")[0];
+        j.onmouseover = function() {
+            j.style.backgroundColor = "blue";
+            j.innerHTML = "2";
+            j.style.lineHeight = "100px";
+            j.style.textAlign = "center";
+            var one1 = document.createElement("div");
+            one1.style.width = "140px";
+            one1.style.height = "140px";
+            one1.style.borderStyle = "solid";
+            one1.innerHTML = "第二个";
+            one1.style.lineHeight = "100px";
+            one1.style.textAlign = "center";
+            one1.style.left = "380px";
+            one1.style.position = "absolute";
+            one1.setAttribute("id", "one3");
+            var hu = 0;
+            document.body.appendChild(one1);
+
+            function hd() {
+                hu = hu + 10;
+                one1.style.top = hu + "px";
+                if (hu == 240)
+                    clearInterval(intervalId);
+            }
+            intervalId = setInterval(hd, 10);
+        }
+        j.onmouseout = function() {
+            j.style.backgroundColor = "yellowgreen";
+            j.innerHTML = "";
+            var child = document.getElementById("one3");
+
+            document.body.removeChild(child);
+        }
+        var k = document.getElementsByClassName("three")[0];
+        k.onmouseover = function() {
+            k.style.backgroundColor = "blue";
+            k.innerHTML = "0";
+            k.style.lineHeight = "100px";
+            k.style.textAlign = "center";
+            var one1 = document.createElement("div");
+            one1.style.width = "140px";
+            one1.style.height = "140px";
+            one1.style.borderStyle = "solid";
+            one1.innerHTML = "第三个";
+            one1.style.lineHeight = "100px";
+            one1.style.textAlign = "center";
+            one1.style.left = "570px";
+            one1.style.position = "absolute";
+            one1.setAttribute("id", "one4");
+            var hu = 0;
+            document.body.appendChild(one1);
+
+            function hd() {
+                hu = hu + 10;
+                one1.style.top = hu + "px";
+                if (hu == 240)
+                    clearInterval(intervalId);
+            }
+            intervalId = setInterval(hd, 10);
+        }
+        k.onmouseout = function() {
+            k.style.backgroundColor = "wheat";
+            k.innerHTML = "";
+            var child = document.getElementById("one4");
+
+            document.body.removeChild(child);
+        }
+    </script>
+</body>
+
+</html>

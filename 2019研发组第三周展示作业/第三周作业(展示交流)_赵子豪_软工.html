@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>表单事件</title>
+	<style type="text/css">
+		strong{color:red;font-style: bolder;}
+		fieldset{width:560px;height: 180px;padding:0px 50px;}
+		.button{margin: 10px 20px;}
+		
+	</style>
+	<script type="text/javascript">
+	function $(id){return document.getElementById(id);}
+		function check()
+		{
+			var username=$("onename").value;
+			var pwd=$("mm1").value;
+			var pwdConfirm=$("mm2").value;
+			var checkright=true;
+			if(username==""||pwd=="")
+				{
+					alert("用户名和密码不能为空!!");
+					checkright=false;
+				}else
+					{
+						if(username.length<6)
+							{
+								alert("用户名长度太短，至少6个字符！");
+								checkright=false;
+							}else if(pwd.length<6){
+								alert("密码长度太短，至少6个字符！");
+								checkright=false;
+							}else if(pwd!=pwdConfirm){
+								alert("两次密码输入必须一致！");
+								checkright=false;
+							}else{
+								checkright=true;
+							}
+						return checkright;
+					}
+			function clearInfo()
+			{
+				var flag=confirm("确认要重置数据吗？");
+				if(flag=true)
+					{
+						$("onename").value="";
+						$("mm1").value="";
+						$("mm2").value="";
+					}
+			}
+		}
+		function getFocus(){document.bgColor="red";}
+		function loseFocus(){document.bgColor="white";}
+	</script>
+</head>
+<body>
+	<script type="text/javascript" for="window" event="onload"><!--对象 事件句柄-->
+		alert("网页读取完成");
+	</script>
+	<form action="03.html" method="get" onSubmit="return check()" onReset="clearInfo()">
+	<fieldset>
+		<div>
+		<legend align="center">用户注册</legend>
+		<label>用&nbsp;&nbsp;户&nbsp;&nbsp;名：</label>
+		  <input type="text" name="onename" id="onename">
+		  <strong>(用户名要大于6位)</strong><br/>
+			<label>登录密码：</label>
+			<input type="passord" name="mm1" id="mm1">
+			<strong>(密码要大于6位)</strong><br/>
+			<label>确认密码：</label>
+			<input type="password" name="mm2" id="mm2"><br/>
+			<input class="button" type="submit" value="用户注册">
+			<input class="button" type="reset" value="重置">
+			<br/><input type="button" onFocus="getFocus()" value="获得/失去焦点事件" onBlur="loseFocus()"/>	
+		</div>
+	</fieldset>
+	</form>
+</body>
+</html>

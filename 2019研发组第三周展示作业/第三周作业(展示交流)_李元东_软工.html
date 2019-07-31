@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<titleu表单事件</title>
+	<style type=test/css>
+	fieldset{width:300px;height:150px;}
+	</style>
+	<script type="text/javascript">
+	function getFocus(){document.bgColor="#114455";}
+	function loseFocus(){document.bgColor="#FF66FF"}
+	</script>
+</head>
+<body>
+	<h1 onclick="this.innerHTML='你点击了网络中心'"  align="center">网络中心</h1>
+	<hr>
+<form>
+	</br><input type="button" onFocus="getFocus()" value=" 计划表" onBlur="loseFocus()"/>
+	</form>
+<hr>
+	<p>数据提交表单</p>
+<fieldset id="myFieldset">
+  Name: 
+</fieldset><br>
+
+<button onclick="myFunction()">试一下</button>
+
+<script>
+function myFunction()
+{
+var x = document.createElement("LEGEND");
+document.getElementById("myFieldset").appendChild(x);
+}
+</script>
+
+	
+	
+</body>
+</html>

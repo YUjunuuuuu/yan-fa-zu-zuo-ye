@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style type="text/css" >
+	.bt1{height: 50px;
+			width: 200px;
+		text-align: center;
+	
+			background-color:yellow;
+		}
+	</style>
+	<script type="text/javascript">
+		function $(id){return document.getElementById(id);}
+					  function copyText(){$("target").value=$("source").value;}
+	</script>
+</head>	
+<body>
+	<hr>
+	<h3 align="center">鼠标点击事件</h3>
+	<div class="bt1"  ><input type="button" name="click" value="鼠标单击" onClick="alert('你单击了按钮！')"><br>
+	<input type="button" name="click" value="鼠标双击" onDblClick="alert('你双击了按钮')"><br></div>
+	<hr>
+	<h3 align="center">这是一个文本复制</h3>
+	<form method="post" action="">
+	来源文本框：<input type="text" id="source" value=""><br>
+	目标文本框：<input type="text" id="target" readonly><br>
+	<input type="button" value="复制文本内容" onClick="copyText();">
+		<hr>
+		<h3 align="center">鼠标移动</h3>
+		
+		
+		
+		
+		
+		
+	
+</form>
+</body>
+</html>

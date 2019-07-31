@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>表单事件</title>
+    <meta name="viewPort" content="width=device-width,scall,minimum-scale=1.0,maximum-scale=1.0" />
+    <style>
+    body{
+        text-align:center;
+        padding-top:15px;
+    }
+    </style>
+</head>
+<body>
+<div id="zt" style="color:blue;">这里显示状态</div>
+    <form action="" method="" id="fo" onreset="reSet()">
+        <p>用户名 <p>
+        <p><input type="text" name="" value="小哥哥来玩啊" id="userName"/></p>
+        <p>密码</p>
+        <p><input type="text" name="" placeholder="哼" readonly id="userPass" /></p>
+        <p>性别</p>
+        <select id="sex">
+            <option value="请选择性别">请选择性别</option>
+            <option value="男">男</option>
+            <option value="女">女</option>
+        </select>
+        <p><input type="submit" value="提交" />
+        <p><input type="reset" value="重置" onclick="onreset" />
+    </form>
+    <script>
+        var uName = document.getElementById("userName");
+        var zt = document.getElementById("zt");
+        var uSex = document.getElementById("sex");
+        var uForm = document.getElementById("fo");
+
+        //获得焦点事件 ： onfocus
+        uName.onfocus = function (){
+            zt.innerHTML = "获得焦点";
+        }
+        //失去焦点事件 ： onblur
+        uName.onblur = function (){
+            zt.innerHTML = "失去了焦点";
+        }
+        //选择事件 : onselect
+        uName.onselect = function (){
+            zt.innerHTML = "你选择我里面的文字了";
+        }
+        //切换焦点事件 ： onchange
+        uSex.onchange = function (){
+            zt.innerHTML="你切换性别了";
+        }
+        //表单提交事件 ： onsubmit
+        uForm.onsubmit = function(){
+            //显示提示框是否要提交
+            var tj = confirm("你真的要提交这个表单");
+            //判断，不是则返回false(不提交)
+            if(!tj){
+                return false;
+            }
+        }
+        //表单重置事件 ： onreset
+        uForm.onreset = function(){
+            //显示提示框是否要提交
+            var tt = confirm("你真的要重置这个表单");
+            //判断，不是则返回false(不提交)
+            if(!tt){
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

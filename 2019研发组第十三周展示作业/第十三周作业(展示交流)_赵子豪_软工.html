@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>鼠标移入滑动动画</title>
+    <style rel="stylesheet" type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .item {
+            width: 100px;
+            height: 100px;
+            margin: 15px;
+            margin-top: 200px;
+            background: #73a058;
+            float: left;
+            border-radius: 50px;
+            /*边框圆角*/
+        }
+        /*设置滑出框属性*/
+        
+        .tooltip {
+            width: 120px;
+            position: absolute;
+            box-shadow: 10px 10px 10px 0 #ccc;
+            /* 为盒子框设置阴影：box-shadow:水平阴影的距离(正数向右偏移投影，负数向左偏移) 垂直阴影的距离 阴影的模糊距离 颜色; */
+            margin-top: -400px;
+            background: #fff;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            function $(id) {
+                return document.getElementById(id);
+            }
+            // var bco=$box1;
+            // var text=$text1;
+            // var box2=$box2;
+            // var text2=$text2;
+            // var box3=$box3;
+            // var text3=$text3;
+            var bco = document.getElementById("box1");
+            var text = document.getElementById("text1");
+            var box2 = document.getElementById("box2");
+            var text2 = document.getElementById("text2");
+            var box3 = document.getElementById("box3");
+            var text3 = document.getElementById("text3");
+            var timer;
+            var timers;
+
+            function move(bco, text) {
+                bco.onmousemove = function() {
+                    bco.style.background = "#6d643b";
+                    // text.style.margin="-125px 0 0 0";
+                    clearInterval(timers);
+                    clearInterval(timer);
+                    var speed = -400;
+                    timer = setInterval(function() {
+                        if (speed >= -150) {
+                            clearInterval(timer);
+                        } else {
+                            text.style.marginTop = (speed += 4) + "px";
+                        }
+                    }, 0.1)
+                }
+            }
+            move(bco, text);
+            move(box2, text2);
+            move(box3, text3);
+
+            function up(bco, text) {
+                bco.onmouseout = function() {
+                    bco.style.background = "#73a058";
+                    // text.style.margin="-500px 0px 0px 0px";
+                    clearInterval(timer);
+                    clearInterval(timers);
+                    var speeds = -150;
+                    timer = setInterval(function() {
+                        if (speeds <= -400) {
+                            clearInterval(timers);
+                        } else {
+                            text.style.marginTop = (speeds -= 4) + "px";
+                        }
+                    }, 0.1)
+                }
+            }
+            up(bco, text);
+            up(box2, text2);
+            up(box3, text3);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="item" id="box1">
+        <div class="tooltip" id="text1">
+            <p>《再飞行》眼前重复的风景，渐渐模糊了约定，星空下流浪的你。</p>
+        </div>
+    </div>
+    <div class="item" id="box2">
+        <div class="tooltip" id="text2">
+            <p>《再飞行》眼前重复的风景，渐渐模糊了约定，星空下流浪的你。</p>
+        </div>
+    </div>
+    <div class="item" id="box3">
+        <div class="tooltip" id="text3">
+            <p>《再飞行》眼前重复的风景，渐渐模糊了约定，星空下流浪的你。</p>
+        </div>
+    </div>
+</body>
+
+</html>

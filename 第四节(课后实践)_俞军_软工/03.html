@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>布局方式</title>
+	<style type="text/css">
+		body{
+			margin:0px;
+		}
+		#contain{width:100%;height:950px;background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539751930111&di=46103de9df0bb4caff8f23e1e526be76&imgtype=0&src=http%3A%2F%2Fimg4.xiazaizhijia.com%2Fwalls%2F20160125%2F1440x900_119d0690275944b.jpg)}
+		#first{width:50%;height:20%;
+		float:left}
+	#second{background-color:aliceblue;width:50%;height:20%;
+		float:left}
+		#thrid{width:30%;height:25%;float:left}
+		#forth{background-color:chartreuse;width:70%;height:25%;float:left}
+		#fifth{width:100%;height:55%;clear:both}</style>
+	
+</head>
+
+<body>
+	<div id="contain">
+	<div id="first"><form>
+		用户名:<input type="text">
+		<br>
+		密 码：<input type="password">
+		<br>
+		<input type="button" value="取消">
+		<input type="button" value="登陆">
+	</form></div>
+	<div id="second"><form>李斯喜欢吃的水果有
+		<br>
+		苹果<input type="checkbox">
+		李子<input type="checkbox">
+		香蕉<input type="checkbox"></form></div>
+	<div id="thrid"><form>
+		李斯的性别是
+		<br>
+		男<input type="radio" name="sex">
+		女<input type="radio" name="sex"></form></div>
+	<div id="forth"><form>李斯喜欢的人<select><option>爸爸</option><option>妈妈</option><option>俞军</option></select></form></div>
+	<div id="fifth">想对李斯说的话  <textarea cols="30"rows="30"></textarea><form><input type="button"value="取消"><input type="submit"value="提交"></form></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+ #menu{
+            width: 720px;
+            height: 20px;
+            margin: 0px auto;
+            border: 1px solid #999;
+        }
+        #menu ul{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;/* 隐藏默认列表符号*/
+        }
+        #menu ul li{
+            background: #00A9CC;
+            height: 20px;
+            line-height: 20px;  /*行距*/
+            text-align: center;
+            border-bottom: 1px solid #999;
+            position: relative;
+            width: 120px;
+            float: left;
+        }
+        a{
+            display: block;
+            font-size: 10px;
+            color: #FFF;
+            text-decoration: none;/*隐藏超廉价默认下划线*/
+        }
+        a:hover{
+            color:#F00;
+            font-size: 14px;
+        }
+        #menu ul li ul{
+            display: none;/*默认隐藏*/
+            top:20px;
+            width: 120px;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            position: absolute;
+            left: 0px;
+        }
+        #menu ul li:hover ul{
+            display: block;
+        }
+       
+
+

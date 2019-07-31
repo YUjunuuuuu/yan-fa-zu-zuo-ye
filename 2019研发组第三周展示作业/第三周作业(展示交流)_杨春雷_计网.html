@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       <title>输入返回事件</title>
+    </head>
+    <body><div align="center">
+    <form name="testform" action="#" id="form">
+            你的姓名是：?<br/>
+            <input type="text" name="fname"/>
+            <input type="submit" value="提交" />
+        </form>
+        <script type="text/javascript">
+            var form = document.getElementById('form');
+            form.onsubmit = function(){
+                alert('Hello ' + testform.fname.value +'!');
+            }
+        </script>
+ 	</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+ <title></title>
+	<style>
+		#content{margin:10px auto;border-radius:50%； background-color:aqua;display:none;}
+		#abc{width:100px;height:100px;border-radius:50px;border:solid rgb(100,100,100) 1px;background-color: aqua;}</style>
+	</head>
+<body>
+	<div id="abc"  onMouseOver="overShow()" onMouseOut="outHide()"></div>
+	
+	<script>
+	function overShow(){ var h=document.getElementById("abc");
+						h.style.backgroundColor="yellow";
+						h.innerHTML="第一个";
+						h.style.textAlign="center";
+						h.style.lineHeight="100px";
+					   }
+	function outHide(){var h=document.getElementById("abc");
+					  h.style.backgroundColor="aqua";
+					  h.innerHTML="";}
+		
+		
+
+	</script>
+</body> 
+</html>

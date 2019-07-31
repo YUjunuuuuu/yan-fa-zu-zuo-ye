@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+<body>
+<script>
+    function mouseMove(ev)
+    {
+        ev = ev || window.event;
+        var mousePos = mouseCoords(ev);
+        document.getElementById("xxx").value = mousePos.x;
+        document.getElementById("yyy").value = mousePos.y;
+    }
+
+    function mouseCoords(ev)
+    {
+        if(ev.pageX || ev.pageY){
+            return {x:ev.pageX, y:ev.pageY};
+        }
+        return {
+            x:ev.clientX + document.body.scrollLeft - document.body.clientLeft,
+            y:ev.clientY + document.body.scrollTop - document.body.clientTop
+        };
+    }
+
+    document.onmousemove = mouseMove;
+
+    $(document).mousemove(function(e){
+        $('.h1').text(e.pageX + ", " + e.pageY);
+    });
+
+
+    alert(document.getElementsByTagName("div").screenX);
+
+</script>
+    X坐标:<input id = xxx type = text>
+    Y坐标:<input id = yyy type = text>
+</body>
+</html>

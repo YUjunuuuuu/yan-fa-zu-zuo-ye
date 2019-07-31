@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+#div1{background-color:#FFF68F; width:500px;height:200px;border:2px solid black;}
+</style>
+<script type="text/javascript">
+function $(id) {return document.getElementById(id)}
+function mouseover(){$('div1').style.background="red";}
+	
+	function $(id){return document.getElementById(id);}
+function copyText(){$("mima").value=$("zhanghao").value;}
+function checkNo()
+{
+if(window.event.keyCode!=13)
+{
+if(event.keyCode<48||event.keyCode>57)
+{alert("你输入学号错误！");}
+}else{if(myform.zhanghao.value.length<=0){ alert("学号不能为空");}
+else {alert("你的学号为："+myform.zhanghao.value);}}
+	}
+function checkName(){
+	if(window.event.keyCode==13)
+	{alert("你的姓名为："+myform.mima.value);}}
+</script>
+</head>
+
+<body>
+<div id="div1" onMouseOver="mouseover()"  onmouseout="mouseout()">
+<form name="myform" method="post" action=""><div id="div2">
+账号：<input type="text" name="zhanghao" onKeyPress="checkNo()" id="zhanghao" value="">必须为数字<br/>
+姓名：<input type="text" name="mima" onKeyPress="checkName()" id="mima" onDblClick="copyText();"  >回车显示姓名<br/>
+<input type="submit" value="提交"><input type="reset" value="重置">
+</div></form>
+</div></body>
+</html>
